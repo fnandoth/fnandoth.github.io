@@ -1,0 +1,26 @@
+---
+const { projects } = Astro.props;
+---
+
+<div class="project-grid">
+  {projects.map((p:any) => (
+    <article class="project-card">
+      <header class="project-header">
+        <h3 class="project-title">{p.title}</h3>
+      </header>
+      <p class="project-description">{p.description}</p>
+
+      {p.details && (
+        <ul class="project-details">
+          {p.details.map((d:string) => <li>{d}</li>)}
+        </ul>
+      )}
+
+      {p.tech && (
+        <div class="tech-list">
+          {p.tech.map((t:string) => <span class="tech-chip">{t}</span>)}
+        </div>
+      )}
+    </article>
+  ))}
+</div>
