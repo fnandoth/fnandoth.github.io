@@ -1,37 +1,23 @@
 ---
-import MainLayout from '../layouts/MainLayout.astro';
-import '../styles/pages.css';
-
-const skills = [
-  "Node.js", "Python", "C#", "Rust", "SQL", "Docker", "Git", "REST APIs",
-  "Microservices", "Agile Methodologies", ".NET Core", "Tauri", "Godot",
-  "TypeScript", "React", "Next.js", "Tailwind CSS", "RabbitMQ", "Entity Framework",
-  "PostgreSQL", "Teamwork", "Problem Solving", "Communication", "Adaptability", "English B2"
-];
-
-
+import MainLayout from "../layouts/MainLayout.astro";
+import Skills from "../components/skills.astro";
+import ProjectList from "../components/projectlist.astro";
+import "../styles/index.css";
 ---
-<MainLayout title="Home">
-  <section class="home">
-    <div class="bio">
+
+<MainLayout>
+  <div class="index">
+    <div class="introduction">
       <h1>Hello, I'm Fernando</h1>
-      <p>Passionate about problem solving and technology development. My preferred focus is on backend development, where I have been honing my skills and knowledge over the past few years</p>
-      <!-- Apasionado por la resolución de problemas y el desarrollo tecnológico. Mi área de especialización preferida es el desarrollo backend, donde he perfeccionado mis habilidades y conocimientos durante los últimos años -->
+      <p>
+        Passionate about problem solving and technology development. My preferred
+        focus is on backend development, where I have been honing my skills and
+        knowledge over the past few years
+      </p>
     </div>
-    <div class="experience">
-      <h2>Experience</h2>
-      <ul>
-        <!-- Practicante en MedlarSoft – Desarrollo de microservicios en .NET para el sistema de RR. HH. con integración RabbitMQ -->
-        <li>Intern at MedlarSoft - Developed .NET microservices for the HR system with RabbitMQ integration</li> 
-      </ul>
-    </div>
-    <div class="skillSection">
-      <h2>Skills</h2>
-      <div class="SkillMap">
-        {skills.map((skill:any) => (
-          <span class="skillCard">{skill}</span>
-        ))}
-      </div>
-    </div>
-  </section>
+    <h1>Projects</h1>
+    <ProjectList />
+    <h1>Skills</h1>
+    <Skills />
+  </div>
 </MainLayout>

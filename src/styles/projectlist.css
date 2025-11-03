@@ -1,0 +1,92 @@
+.projectcontainer {
+  display: grid;
+  gap: 1.5rem;
+  width: 80%;
+  margin: 0 auto;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-areas:
+    "main main"
+    "second third"
+    "fourth fourth";
+}
+
+.projectCard {
+  background: rgba(28, 28, 28, 0.45);
+  color: #f5f5f5;
+  padding: 1.5rem;
+  border-radius: 1rem;
+  box-shadow:
+    0 4px 20px rgba(0, 0, 0, 0.25),
+    inset 0 1px 0 rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(12px) saturate(140%);
+  -webkit-backdrop-filter: blur(12px) saturate(140%);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+}
+
+.projectCard:hover {
+  transform: translateY(-5px);
+  box-shadow:
+    0 8px 30px rgba(0, 0, 0, 0.4),
+    0 0 20px rgba(0, 180, 216, 0.15);
+  background: rgba(28, 28, 28, 0.6);
+}
+
+
+.project-0 { grid-area: main;  }
+.project-1 { grid-area: second; }
+.project-2 { grid-area: third; }
+.project-3 { grid-area: fourth; }
+
+.projectCard h2 {
+  margin-bottom: 0.5rem;
+}
+
+.description {
+  font-size: 0.95rem;
+  margin-bottom: 1rem;
+  opacity: 0.9;
+}
+
+.details {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 1rem 0;
+}
+
+.details li {
+  font-size: 0.85rem;
+  opacity: 0.8;
+}
+
+.techList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.skillCard {
+  background: rgba(0, 180, 216, 0.12);
+  border: 1px solid rgba(0, 180, 216, 0.25);
+  border-radius: 8px;
+  padding: 0.3rem 0.7rem;
+  font-size: 0.8rem;
+  color: #aeefff;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.skillCard:hover {
+  background: rgba(0, 180, 216, 0.25);
+  transform: scale(1.05);
+}
+
+@media (max-width: 768px) {
+  .projectcontainer {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "main"
+      "second"
+      "third"
+      "fourth";
+  }
+}

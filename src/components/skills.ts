@@ -1,0 +1,32 @@
+
+
+
+const projects = [
+    {
+        title: "MathBreeze",
+        description: "Educational math game built with Godot. The player solves as many math problems as possible within 30 seconds.",
+        details: [
+            "Developed with Godot Engine",
+            "Integrated web export and score saving"
+        ],
+        tech: ["Godot", "GDScript", "HTML"]
+    },
+    {
+        title: "Library",
+        description: "Library management system built using Rust and Tauri.",
+        details: ["Implements CRUD operations", "Desktop app with modern UI"],
+        tech: ["Rust", "Tauri", "SQLite"]
+    },
+    {
+        title: "Fungus",
+        description: "Music app created with Tauri and React for offline playback.",
+        details: ["Custom audio player", "Playlists and local storage"],
+        tech: ["React", "Tauri", "JavaScript"]
+    },
+    {
+        title: "BG",
+        description: "A blogging platform built with Next.js and Tailwind CSS.",
+        details: ["Markdown editor", "Serverless functions"],
+        tech: ["Next.js", "Tailwind CSS", "Vercel"]
+    }
+];

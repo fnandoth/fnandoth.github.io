@@ -1,26 +1,49 @@
 ---
-const { projects } = Astro.props;
+import "../styles/projectlist.css";
+
+const projects = [
+    {
+        title: "BG",
+        description: "A twitter clone ",
+        details: ["Markdown editor", "Serverless functions"],
+        tech: ["Next.js", "Tailwind CSS", "Vercel"]
+    },
+    {
+        title: "Library",
+        description: "Library management system to keep track of books and users",
+        details: ["Implements CRUD operations", "Desktop app with modern UI"],
+        tech: ["Rust", "Tauri", "SQLite"]
+    },
+    {
+        title: "Fungus",
+        description: "Lightweight audio player desktop app, can search and play YouTube music videos and local audio files",
+        details: ["Custom audio player", "Playlists and local storage"],
+        tech: ["React", "Tauri", "JavaScript"]
+    },
+    {
+        title: "MathBreeze",
+        description: "Educational math game. The player solves as many math problems as possible within 30 seconds",
+        details: [
+            "Developed with Godot Engine",
+            "Integrated web export and score saving"
+        ],
+        tech: ["Godot", "GDScript", "HTML"]
+    },
+    
+];
 ---
 
-<div class="project-grid">
-  {projects.map((p:any) => (
-    <article class="project-card">
-      <header class="project-header">
-        <h3 class="project-title">{p.title}</h3>
-      </header>
-      <p class="project-description">{p.description}</p>
-
-      {p.details && (
-        <ul class="project-details">
-          {p.details.map((d:string) => <li>{d}</li>)}
-        </ul>
-      )}
-
-      {p.tech && (
-        <div class="tech-list">
-          {p.tech.map((t:string) => <span class="tech-chip">{t}</span>)}
-        </div>
-      )}
-    </article>
+<div class="projectcontainer">
+  {projects.map((project, index) => (
+    <div class={`projectCard project-${index}`}>
+      <h2>{project.title}</h2>
+      <p class="description">{project.description}</p>
+      <ul class="details">
+        {project.details.map(d => <li>{d}</li>)}
+      </ul>
+      <div class="techList">
+        {project.tech.map(t => <span class="skillCard">{t}</span>)}
+      </div>
+    </div>
   ))}
 </div>
