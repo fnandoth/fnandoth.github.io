@@ -6,19 +6,22 @@ const projects = [
         title: "BG",
         description: "A twitter clone ",
         details: ["Markdown editor", "Serverless functions"],
-        tech: ["Next.js", "Tailwind CSS", "Vercel"]
+        tech: ["Next.js", "Tailwind CSS", "Vercel"],
+        link: "https://github.com/fnandoth/BG"
     },
     {
         title: "Library",
         description: "Library management system to keep track of books and users",
         details: ["Implements CRUD operations", "Desktop app with modern UI"],
-        tech: ["Rust", "Tauri", "SQLite"]
+        tech: ["Rust", "Tauri", "SQLite"],
+        link: "https://github.com/fnandoth/Library"
     },
     {
         title: "Fungus",
         description: "Lightweight audio player desktop app, can search and play YouTube music videos and local audio files",
         details: ["Custom audio player", "Playlists and local storage"],
-        tech: ["React", "Tauri", "JavaScript"]
+        tech: ["React", "Tauri", "JavaScript"],
+        link: "https://github.com/fnandoth/Fungus"
     },
     {
         title: "MathBreeze",
@@ -27,7 +30,8 @@ const projects = [
             "Developed with Godot Engine",
             "Integrated web export and score saving"
         ],
-        tech: ["Godot", "GDScript", "HTML"]
+        tech: ["Godot", "GDScript", "HTML"],
+        link: "https://github.com/fnandoth/MathBreeze"
     },
     
 ];
@@ -35,9 +39,9 @@ const projects = [
 
 <div class="projectcontainer">
   {projects.map((project, index) => (
-    <div class={`projectCard project-${index}`}>
+    <div class={`projectCard project-${index}`}  onclick={`window.open('${project.link}', '_blank')`}>
       <h2>{project.title}</h2>
-      <p class="description">{project.description}</p>
+      <p class="</div>description">{project.description}</p>
       <ul class="details">
         {project.details.map(d => <li>{d}</li>)}
       </ul>
